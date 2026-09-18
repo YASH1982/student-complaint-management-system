@@ -88,9 +88,9 @@ Edit Complaint        Cancel Complaint
               |
               v
         Track Resolution
+
 ### Admin Flow
 
-```text
 Admin
    |
    | Login
@@ -118,7 +118,8 @@ Resolved
    v
 Closed
 
-### SUBMITTED
+### complain status flow
+ SUBMITTED
     |
     v
 ASSIGNED
