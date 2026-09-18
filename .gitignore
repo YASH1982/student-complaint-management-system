@@ -1,0 +1,72 @@
+# ===============================
+# Maven
+# ===============================
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ===============================
+# IDE - STS / Eclipse
+# ===============================
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# ===============================
+# IntelliJ IDEA
+# ===============================
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# ===============================
+# NetBeans
+# ===============================
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ===============================
+# VS Code
+# ===============================
+.vscode/
+
+# ===============================
+# Environment & Secrets
+# ===============================
+.env
+.env.*
+!.env.example
+
+# ===============================
+# Application Secrets
+# ===============================
+application-local.properties
+
+# ===============================
+# Uploaded Files
+# ===============================
+uploads/
+
+# ===============================
+# Logs
+# ===============================
+*.log
+logs/
+
+# ===============================
+# OS Files
+# ===============================
+.DS_Store
+Thumbs.db
