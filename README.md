@@ -1,103 +1,138 @@
 # Student Complaint Management System
 
-A full-stack web application for managing student complaints in a college environment.
+A full-stack web application for managing student complaints in a college or university environment.
 
-The idea behind this project is simple: students can submit and track their complaints, while admins can manage complaints, assign departments, update their status, and handle resolutions from one place.
+The system allows students to submit and track complaints, while administrators can manage complaints, assign departments, update statuses, add resolutions, and monitor the overall complaint process.
+
+---
 
 ## About the Project
 
-I built this project to practice and bring together the concepts I have learned in Java, Spring Boot, React, MySQL, REST APIs, and Spring Security.
+I built this project to practice and demonstrate full-stack development using **Java, Spring Boot, React, MySQL, REST APIs, and Spring Security**.
 
-The application has separate access for students and administrators. Students can create complaints and follow their progress, while administrators can manage the complaints and update them as they move through the process.
+The main focus of the project is to create a structured complaint management system with authentication, role-based access, complaint tracking, department assignment, attachments, search, filtering, pagination, and status management.
+
+---
 
 ## Features
 
-### Student
+### Student Features
 
-- Register and login
+- Student registration and login
 - JWT-based authentication
 - Student dashboard
-- Submit a complaint
-- Select complaint category and priority
+- Submit complaints
+- Select complaint category
+- Select complaint priority
 - View complaint history
 - View complaint details
 - Track complaint status
-- Edit a complaint when allowed
-- Cancel a complaint when allowed
-- Add comments
-- Upload attachments
+- Edit complaints
+- Cancel complaints
+- Upload complaint attachments
 - Preview uploaded attachments
-- View status history
-- Get a unique complaint tracking number
+- View resolution provided by admin
 
-### Admin
+### Admin Features
 
 - Admin login
+- JWT-based authentication
 - Admin dashboard
-- View complaint statistics
 - View all complaints
 - Search complaints
-- Filter complaints by status, category, priority and department
-- Pagination and sorting
-- View complete complaint details
+- Search complaints by student name/email
+- Filter complaints by:
+  - Status
+  - Category
+  - Priority
+  - Department
+- Pagination
+- Sorting
 - Assign complaints to departments
 - Update complaint status
-- Add resolution details
+- Add resolution
 - Add comments
 - View complaint attachments
-- Manage departments
+- View complaint status history
+- Monitor complaint statistics
 
-## Tech Stack
-
-### Backend
-
-- Java
-- Spring Boot
-- Spring Security
-- JWT
-- Spring Data JPA
-- Hibernate
-- MySQL
-- Maven
-- Lombok
-
-### Frontend
-
-- React
-- JavaScript
-- Axios
-- CSS
-- Vite
-
-### Tools
-
-- IntelliJ IDEA / VS Code
-- MySQL Workbench
-- Postman
-- Git & GitHub
+---
 
 ## How It Works
 
-The basic flow of the application is:
+The application has two main flows: **Student Flow** and **Admin Flow**.
+
+### Student Flow
 
 ```text
 Student
    |
+   | Register / Login
+   v
+Student Dashboard
+   |
    | Submit Complaint
    v
-Complaint
+Complaint Created
    |
-   | Admin assigns department
+   | Track Status
    v
-Assigned
+View Complaint Details
    |
-   | Admin updates status
+   +----------------------+
+   |                      |
+   v                      v
+Edit Complaint        Cancel Complaint
+   |                      |
+   +----------+-----------+
+              |
+              v
+        Track Resolution
+### Admin Flow
+
+```text
+Admin
+   |
+   | Login
    v
-In Progress
+Admin Dashboard
    |
-   | Admin resolves
+   | View Complaints
+   v
+Search / Filter Complaints
+   |
+   | Assign Department
+   v
+Update Complaint Status
+   |
+   +-----------------------------+
+   |              |              |
+   v              v              v
+Assigned     In Progress      Rejected
+   |
+   | Resolve Complaint
    v
 Resolved
    |
+   | Close Complaint
    v
 Closed
+
+### SUBMITTED
+    |
+    v
+ASSIGNED
+    |
+    v
+IN_PROGRESS
+    |
+    +------------------+
+    |                  |
+    v                  v
+RESOLVED           REJECTED
+    |
+    v
+CLOSED
+
+Student can also CANCEL
+the complaint when allowed.
